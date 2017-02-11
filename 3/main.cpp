@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <map>
 #include <math.h>
+#include <fstream>  
 
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
@@ -14,9 +15,16 @@ int main(int argc, char** argv) {
 	int max = 0;
 	map<float, int> heights;
 	
+	/*
+	ifstream file("input.txt");
+    while (getline(file, count))
+    {
+    	cout << count;
+    }
+	*/
 	cin>>input;
 	max = input;
-	if(max >= 3 && max <= 400){
+	while(max >= 3 && max <= 400){
 		cin>>input;
 		while(input != 0 && input > 0.5 && input < 2.5){
 			input = roundf(input * 100) / 100;
@@ -54,6 +62,9 @@ int main(int argc, char** argv) {
 		}
 		
 		printf("First: %.2f -> %d. Second: %.2f -> %d.", valueMean1, freqMean1, valueMean2, freqMean2);
+		cin>>input;
+		max = input;
+		count = 0;
 	}
 
 	return 0;
